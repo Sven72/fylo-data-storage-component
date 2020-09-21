@@ -163,19 +163,20 @@ body {
 
 @media (min-width: 900px) {
   body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: center; */
   }
   .flex-container {
+    height: 100vh;
     flex-direction: row;
     background-image: url(./images/bg-desktop.png);
     background-position: center bottom;
     background-repeat: no-repeat;
     padding: 4em;
-    padding-top: 10%;
+    padding-top: 25%;
     align-items: baseline;
-    height: 100vh;
+    /* align-items: center; */
   }
 
   .icon-container {
