@@ -181,6 +181,7 @@ body {
 
   .icon-container {
     margin-right: 2em;
+    width: 50%;
   }
 
   .absolute-positioned {
