@@ -1,0 +1,218 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  --pale-blue: hsl(243, 100%, 93%);
+  --gray-blue: hsl(229, 7%, 55%);
+  --dark-blue: hsl(228, 56%, 26%);
+  --very-dark-blue: hsl(229, 57%, 11%);
+  --gradient: hsl(6, 100%, 80%), hsl(335, 100%, 65%);
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  padding: 0;
+  margin: 0;
+  font-size: 1.1rem;
+  background-color: var(--very-dark-blue);
+  color: var(--pale-blue);
+  overflow: hidden;
+}
+
+.flex-container {
+  background: url(./images/bg-mobile.png);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-container {
+  display: flex;
+  border-radius: 10px;
+  border-top-right-radius: 40%;
+}
+
+.icon-container img:not(.logo) {
+  background-color: var(--very-dark-blue);
+  padding: 1em;
+  width: 70px;
+  margin-right: 1em;
+  border-radius: 10px;
+}
+
+.logo {
+  margin: 2em 0 2em;
+}
+.icon-container {
+  width: 90%;
+  background-color: var(--dark-blue);
+  display: flex;
+  flex-direction: column;
+  padding: 2em;
+  margin-bottom: 2em;
+}
+
+.flex-icon-container {
+  display: flex;
+  margin-bottom: 1em;
+}
+
+.icon {
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  height: 60px;
+}
+
+.icon img {
+  transform: scale(0.7);
+}
+
+.load-bar {
+  background-color: var(--very-dark-blue);
+  border-radius: 10px;
+  padding: 6px;
+  width: 90%;
+  margin-bottom: 3em;
+}
+
+.load-used {
+  background-image: linear-gradient(90deg, var(--gradient));
+  background-size: 600%;
+  animation: dynamicGradient 1s infinite alternate;
+  width: 75%;
+  margin: 0;
+  border-radius: 10px;
+}
+
+@keyframes dynamicGradient {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
+
+.big {
+  font-weight: 700;
+}
+
+.feedback-container {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  background-color: var(--dark-blue);
+  width: 90%;
+  align-items: center;
+  color: var(--pale-blue);
+  border-radius: 10px;
+  padding: 2em 0 2em;
+}
+
+.absolute-positioned {
+  background-color: var(--pale-blue);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: absolute;
+  color: var(--gray-blue);
+  width: 40%;
+  padding: 1em;
+  border-radius: 10px;
+  top: 13em;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.load-used-point {
+  background-color: var(--pale-blue);
+  width: 15px;
+  height: 15px;
+  margin-left: auto;
+  border-radius: 50%;
+}
+
+.gb {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 90%;
+}
+
+.gb p {
+  display: inline-block;
+  margin-top: -3em;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.bigger {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--very-dark-blue);
+  margin-top: 1em;
+  padding-right: 0.5em;
+}
+
+@media (min-width: 900px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .flex-container {
+    flex-direction: row;
+    background-image: url(./images/bg-desktop.png);
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    padding: 4em;
+    padding-top: 10%;
+    align-items: baseline;
+    height: 100vh;
+  }
+
+  .icon-container {
+    margin-right: 2em;
+  }
+
+  .absolute-positioned {
+    top: -4em;
+    bottom: 12em;
+    right: 5em;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .feedback-container {
+    padding: 1em;
+    align-items: flex-start;
+  }
+
+  .absolute-positioned::after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-right: 20px solid var(--pale-blue);
+    position: absolute;
+    right: 0;
+    bottom: -20px;
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
